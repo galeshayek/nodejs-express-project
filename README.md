@@ -107,4 +107,5 @@ npm run dev
 
 API documentation is provided through Postman. You can find the detailed API docs at the following links:
 
-- [Postman Users Documentation](https://documenter.getpostman.com/view/34770936/2sA3QwcAMs) <!-- Replace with actual Postman link -->
+- [Postman Users Documentation](https://documenter.getpostman.com/view/34770936/2sA3QwcAMs)
+- [Postman Cards Documentation](https://documenter.getpostman.com/view/34770936/2sA3QwcAHT)
