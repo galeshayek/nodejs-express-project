@@ -65,18 +65,6 @@ To start the application in development mode, run:
 npm run dev
 ```
 
-To build the application for production, run:
-
-```terminal
-npm run build
-```
-
-To start the application in production mode, run:
-
-```terminal
-npm start
-```
-
 ## 📂 Project Structure
 
 ```
