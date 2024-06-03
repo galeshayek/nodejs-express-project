@@ -1,5 +1,6 @@
 import { RequestHandler } from "express";
 import { ObjectSchema } from "joi";
+import BizCardsError from "../../errors/BizCardsError";
 
 type ValidateSchema = (schema: ObjectSchema) => RequestHandler;
 

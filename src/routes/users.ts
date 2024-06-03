@@ -42,12 +42,11 @@ router.get('/', ...isAdmin, async (_, res, next) => {
 })
 
 //get user by id
-router.get('/:userId', ...isAdminOrSelf, async (req, res, next) => {
+router.get('/:id', ...isAdminOrSelf, async (req, res, next) => {
   try {
-    const id = req.params.userId
+    const id = req.params.id
     const user = await userService.getUserById(id)
-    const { password, ...rest } = user.toJSON()
-    return res.status(200).json(rest)
+    return res.status(200).json(user)
   } catch (e) {
     next(e)
   }

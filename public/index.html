@@ -4,11 +4,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>API Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #0779e4 3px solid;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        header li {
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+
+        .content {
+            padding: 20px;
+            background: #fff;
+            margin-top: 10px;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>hello</h1>
+    <header>
+        <div class="container">
+            <h1>API Overview</h1>
+            <nav>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#features">Features</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="content" id="introduction">
+            <h2>Introduction</h2>
+            <p>Welcome to the API documentation page. This API provides a set of endpoints for managing user
+                authentication, business cards, and more. It is designed to be robust, scalable, and easy to integrate
+                with your applications.</p>
+        </div>
+        <div class="content" id="features">
+            <h2>Features</h2>
+            <ul>
+                <li>User Authentication: Handle user login, registration, and token validation.</li>
+                <li>Business Card Management: Create, read, update, and delete business cards.</li>
+                <li>Error Handling: Centralized mechanism for managing errors across the application.</li>
+                <li>Validation: Ensure data integrity using Joi-based validation schemas.</li>
+                <li>Logging: Track application activities and errors for debugging and monitoring.</li>
+                <li>Database Management: Efficient database connection and schema management.</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 API Documentation. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>

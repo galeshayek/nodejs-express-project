@@ -4,9 +4,9 @@ import { validateToken } from "./validate-token";
 
 const _isAdminOrSelf: RequestHandler = (req, _, next) => {
   const requestedId = req.params.id;
-  const userId = req.payload._id;
+  const { _id, isAdmin } = req.payload;
 
-  if (requestedId === userId || req.payload?.isAdmin) {
+  if (requestedId === _id || isAdmin) {
     return next();
   }
 

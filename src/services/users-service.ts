@@ -41,13 +41,7 @@ const userService = {
   },
 
   getUserById: async (id: string) => {
-    if (!mongoose.Types.ObjectId.isValid(id)) {
-      throw new UserError(400, 'Invalid user id')
-    }
-    const user = await User.findById({ _id: id })
-    if (user == null) {
-      throw new UserError(404, 'user not found')
-    }
+    const user = await User.findById({ _id: id }, { password: 0 })
     return user
   },
 

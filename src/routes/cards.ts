@@ -8,6 +8,7 @@ import { isBusiness } from "../middleware/is-business";
 import { isSelfCard } from "../middleware/is-self-card";
 import { isAdminOrSelf } from "../middleware/is-admin-or-self";
 import { isAdmin } from "../middleware/is-admin";
+import { isCardOwnerOrAdmin } from "../middleware/is-admin-or-self-card";
 
 const router = Router()
 
@@ -85,7 +86,8 @@ router.patch('/:id', validateToken, async (req, res, next) => {
 router.patch('/biz/:id', ...isAdmin, validateBizNum, async (req, res, next) => {
     try {
         const id = req.params.id;
-        const card = await cardService.updateBizNum(req, id);
+        const update = req.body
+        const card = await cardService.updateBizNum(update, id);
         res.status(200).json(card)
     } catch (e) {
         next(e);
@@ -93,7 +95,7 @@ router.patch('/biz/:id', ...isAdmin, validateBizNum, async (req, res, next) => {
 })
 
 //delete card
-router.delete('/:id', ...isAdminOrSelf, async (req, res, next) => {
+router.delete('/:id', ...isCardOwnerOrAdmin, async (req, res, next) => {
     try {
         const result = await cardService.deleteCard(req);
         res.status(200).json(result)

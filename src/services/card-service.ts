@@ -56,15 +56,13 @@ const cardService = {
     },
 
     updateCard: async (data: ICardInput, id: string) => {
-        const update = await Card.updateOne({ _id: id }, data);
-        if (update.matchedCount === 0) throw new BizCardsError(404, 'card not found')
+        const update = await Card.findByIdAndUpdate(id, data, { new: true });
         return update
     },
 
     patchLike: async (cardId: string, userId: string) => {
         const card = await Card.findById(cardId);
         if (!card) throw new BizCardsError(404, "card doesn't exists");
-
         const likes = card.likes;
         const index = likes.indexOf(userId);
         if (index !== -1) {
@@ -72,12 +70,14 @@ const cardService = {
         } else {
             likes.push(userId);
         }
-        await Card.findByIdAndUpdate(cardId, card)
+        await Card.findByIdAndUpdate(cardId, card, { new: true })
         return card;
     },
 
-    updateBizNum: async (req: Request, id: string) => {
-        return await Card.findByIdAndUpdate(id, req.body, { new: true });
+    updateBizNum: async (body: { bizNumber: number }, id: string) => {
+        const exists = await Card.findOne(body);
+        if (exists) throw new BizCardsError(409, 'bizNumber already exists')
+        return await Card.findByIdAndUpdate(id, body, { new: true });
     },
 
     deleteCard: async (req: Request) => {
