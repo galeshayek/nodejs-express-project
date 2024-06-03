@@ -65,18 +65,6 @@ To start the application in development mode, run:
 npm run dev
 ```
 
-To build the application for production, run:
-
-```terminal
-npm run build
-```
-
-To start the application in production mode, run:
-
-```terminal
-npm start
-```
-
 ## 📂 Project Structure
 
 ```
@@ -119,4 +107,5 @@ npm start
 
 API documentation is provided through Postman. You can find the detailed API docs at the following links:
 
-- [Postman API Documentation](#) <!-- Replace with actual Postman link -->
+- [Postman Users Documentation](https://documenter.getpostman.com/view/34770936/2sA3QwcAMs)
+- [Postman Cards Documentation](https://documenter.getpostman.com/view/34770936/2sA3QwcAHT)
