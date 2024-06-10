@@ -23,7 +23,7 @@ const cardService = {
         const card = new Card(data);
         card.userId = userId;
         await generateCardNum(card);
-        return card.save();
+        return await card.save();
     },
 
     checkIfUnique: async (data: ICardInput) => {

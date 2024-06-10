@@ -14,12 +14,6 @@ const userSchema = new Schema<IUser>({
   isBusiness: { required: true, type: Boolean },
   createdAt: { type: Date, default: new Date(), required: false },
   isAdmin: { required: false, type: Boolean, default: false },
-}, {
-  statics: {
-    filteredUser(id: string) {
-      return this.findById(id, { password: 0 })
-    }
-  }
 });
 
 
